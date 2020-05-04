@@ -44,7 +44,8 @@ int main(int argc, char const *argv[])
         printf("%s\n",buffer ); 
         send(new_socket , hello , strlen(hello) , 0 ); 
         printf("Hello message sent\n"); 
-
+        
+        return 0;
     }
     else {
         //Parent process
@@ -128,6 +129,8 @@ int main(int argc, char const *argv[])
             //execv takes in argument list that needs to be a null terminated array pointer
             char *argv[] = {string_fd, string_port, NULL};
             execv("./server", argv);
+
+            return 0;
 
         } 
         else {
